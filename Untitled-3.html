@@ -29,41 +29,27 @@
     #fullscreenBtn:hover {
       background-color: #0056b3;
     }
-    #content {
-      display: none;
-      text-align: center;
-    }
-    #content h1 {
-      font-size: 48px;
-    }
   </style>
 </head>
 <body>
 
-  <button id="fullscreenBtn">Wejdź w pełny ekran</button>
-
-  <div id="content">
-    <h1>Jesteś teraz w trybie pełnoekranowym!</h1>
-    <p>Naciśnij ESC, aby wyjść z fullscreen.</p>
-  </div>
+  <button id="fullscreenBtn">Wejdź w pełny ekran i przejdź do menu</button>
 
   <script>
     const btn = document.getElementById('fullscreenBtn');
-    const content = document.getElementById('content');
 
     btn.addEventListener('click', () => {
       const elem = document.documentElement; // cała strona
       if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
+        elem.requestFullscreen().then(() => {
+          window.location.href = "mmenu.html"; // zmień na swoją stronę menu
+        }).catch(() => {
+          // Jeśli fullscreen nie zadziała, i tak przekierowujemy
+          window.location.href = "mmenu.html";
+        });
+      } else {
+        window.location.href = "mmenu.html"; // fallback dla przeglądarek bez fullscreen
       }
-
-      // Pokaż treść po przejściu w fullscreen
-      btn.style.display = 'none';
-      content.style.display = 'block';
     });
   </script>
 
