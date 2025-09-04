@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fullscreen Demo</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    #fullscreenBtn {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    #fullscreenBtn:hover {
+      background-color: #0056b3;
+    }
+    #content {
+      display: none;
+      text-align: center;
+    }
+    #content h1 {
+      font-size: 48px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="fullscreenBtn">Wejdź w pełny ekran</button>
+
+  <div id="content">
+    <h1>Jesteś teraz w trybie pełnoekranowym!</h1>
+    <p>Naciśnij ESC, aby wyjść z fullscreen.</p>
+  </div>
+
+  <script>
+    const btn = document.getElementById('fullscreenBtn');
+    const content = document.getElementById('content');
+
+    btn.addEventListener('click', () => {
+      const elem = document.documentElement; // cała strona
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+
+      // Pokaż treść po przejściu w fullscreen
+      btn.style.display = 'none';
+      content.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
