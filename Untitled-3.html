@@ -42,13 +42,13 @@
       const elem = document.documentElement; // cała strona
       if (elem.requestFullscreen) {
         elem.requestFullscreen().then(() => {
-          window.location.href = "mmenu.html"; // zmień na swoją stronę menu
+          window.location.href = "https://mdowod1.github.io/test/mmenu.html"; // zmień na swoją stronę menu
         }).catch(() => {
           // Jeśli fullscreen nie zadziała, i tak przekierowujemy
-          window.location.href = "mmenu.html";
+          window.location.href = "https://mdowod1.github.io/test/mmenu.html";
         });
       } else {
-        window.location.href = "mmenu.html"; // fallback dla przeglądarek bez fullscreen
+        window.location.href = "https://mdowod1.github.io/test/mmenu.html"; // fallback dla przeglądarek bez fullscreen
       }
     });
   </script>
