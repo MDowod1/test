@@ -1,20 +1,6 @@
-{
-  "name": "mObywatel",
-  "short_name": "mObywatel",
-  "start_url": "/test/mmenu.html",
-  "display": "standalone",
-  "background_color": "#101317",
-  "theme_color": "#101317",
-  "icons": [
-    {
-      "src": "assets/app/images/logo.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/app/images/logo_large.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
+{name: "", short_name: "", theme_color: "#101317", background_color: "#101317", display: "standalone"}
+background_color: "#101317"
+display: "standalone"
+name: ""
+short_name: ""
+theme_color: "#101317"
